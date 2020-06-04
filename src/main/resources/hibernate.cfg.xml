@@ -13,5 +13,6 @@
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
         <mapping class="io.lenur.library.domain.Author"/>
+        <mapping class="io.lenur.library.domain.Category"/>
     </session-factory>
 </hibernate-configuration>
