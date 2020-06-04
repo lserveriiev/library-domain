@@ -42,5 +42,8 @@ public class Application {
         author.setGender(AuthorGender.MALE);
         author.addBook(book);
         authorService.create(author);
+
+        Author authorPersist = authorService.findByName("Conan Doyle");
+        assert authorPersist.getBooks().size() == 1;
     }
 }

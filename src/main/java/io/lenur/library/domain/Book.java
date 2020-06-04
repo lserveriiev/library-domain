@@ -1,6 +1,5 @@
 package io.lenur.library.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,16 +26,10 @@ public class Book {
     @Column(nullable = false)
     private LocalDate created;
 
-    @ManyToMany(
-        mappedBy = "books",
-        cascade = {CascadeType.PERSIST, CascadeType.MERGE}
-    )
+    @ManyToMany(mappedBy = "books")
     private List<Author> authors = new ArrayList<>();
 
-    @ManyToMany(
-        mappedBy = "books",
-        cascade = {CascadeType.PERSIST, CascadeType.MERGE}
-    )
+    @ManyToMany(mappedBy = "books")
     private List<Category> categories = new ArrayList<>();
 
     public Long getId() {
@@ -65,11 +58,6 @@ public class Book {
 
     public List<Author> getAuthors() {
         return authors;
-    }
-
-    public void addCategory(Category category) {
-        categories.add(category);
-        category.getBooks().add(this);
     }
 
     public void setAuthors(List<Author> authors) {
