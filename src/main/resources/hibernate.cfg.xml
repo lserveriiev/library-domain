@@ -12,5 +12,6 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
+        <mapping class="io.lenur.library.domain.Author"/>
     </session-factory>
 </hibernate-configuration>
