@@ -4,8 +4,6 @@ import io.lenur.library.domain.Author;
 
 import java.util.Optional;
 
-public interface AuthorDao {
-    Author create(Author author);
-
+public interface AuthorDao extends BaseDao<Author> {
     Optional<Author> findByName(String name);
 }
