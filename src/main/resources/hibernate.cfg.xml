@@ -14,5 +14,6 @@
 
         <mapping class="io.lenur.library.domain.Author"/>
         <mapping class="io.lenur.library.domain.Category"/>
+        <mapping class="io.lenur.library.domain.Book"/>
     </session-factory>
 </hibernate-configuration>

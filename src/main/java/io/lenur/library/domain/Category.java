@@ -27,10 +27,7 @@ public class Category {
     @Column(unique = true)
     private String name;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "category_book",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "book_id")
@@ -59,6 +56,11 @@ public class Category {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public void addBook(Book book) {
+        books.add(book);
+        book.getCategories().add(this);
     }
 
     @Override
